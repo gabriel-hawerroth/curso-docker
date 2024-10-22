@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+
+  laravel:
+    image: hawerroth/laravel:prod
+    container_name: laravel
+    networks:
+      - minharede
+
+  nginx:
+    image: hawerroth/nginx:prod
+    container_name: nginx
+    networks:
+      - minharede
+    ports:
+      - "80:80"
+    depends_on:
+      - laravel
+
+networks:
+  minharede:
+    driver: bridge
