@@ -1,0 +1,27 @@
+services:
+
+  laravel:
+    build:
+      context: ./laravel
+      dockerfile: Dockerfile.prod
+    image: hawerroth/laravel:prod
+    container_name: laravel
+    networks:
+      - minharede
+
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile.prod
+    image: hawerroth/nginx:prod
+    container_name: nginx
+    networks:
+      - minharede
+    ports:
+      - "80:80"
+    depends_on:
+      - laravel
+
+networks:
+  minharede:
+    driver: bridge

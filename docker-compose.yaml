@@ -1,23 +1,31 @@
-version: '3'
-
 services:
 
-  laravel:
-    image: hawerroth/laravel:prod
-    container_name: laravel
+  app:
+    build:
+      context: node
+    container_name: app
     networks:
-      - minharede
-
-  nginx:
-    image: hawerroth/nginx:prod
-    container_name: nginx
-    networks:
-      - minharede
+      - node-network
+    volumes:
+      - ./node:/usr/src/app
+    tty: true
     ports:
-      - "80:80"
-    depends_on:
-      - laravel
+      - "3000:3000"
+
+  db:
+    image: mysql:latest
+    command: --innodb-use-native-aio=0
+    container_name: db
+    restart: always
+    tty: true
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=nodedb
+      - MYSQL_ROOT_PASSWORD=root
+    networks:
+      - node-network
 
 networks:
-  minharede:
+  node-network:
     driver: bridge
