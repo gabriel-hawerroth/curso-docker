@@ -3,12 +3,13 @@ services:
   nginx:
     build:
       context: ./nginx
-    image: hawerroth/nginx:prod
     container_name: nginx
     networks:
       - desafio-network
     ports:
       - "8080:80"
+    depends_on:
+      - app
 
   app:
     build:
@@ -27,18 +28,27 @@ services:
 
   db:
     image: mysql:9.1.0
-    command: --innodb-use-native-aio=0
     container_name: db
     restart: always
     tty: true
     volumes:
-      - ./mysql:/var/lib/mysql
+      - mysql:/var/lib/mysql
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
     environment:
       - MYSQL_DATABASE=nodedb
       - MYSQL_ROOT_PASSWORD=root
     networks:
       - desafio-network
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p$$MYSQL_ROOT_PASSWORD" ]
+      interval: 3s
+      timeout: 12s
+      retries: 4
 
 networks:
   desafio-network:
     driver: bridge
+
+volumes:
+  mysql:
+    driver: local
