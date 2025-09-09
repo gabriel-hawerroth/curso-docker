@@ -168,11 +168,18 @@ docker-compose -f docker-compose.laravel.yaml up -d
 
 ---
 
-## 🔗 Links Úteis
+## 📚 Recursos Adicionais
 
-- 🐳 **Docker Hub:** [hawerroth/fullcycle](https://hub.docker.com/r/hawerroth/fullcycle)
+- 🐳 **Docker Hub:** [hawerroth](https://hub.docker.com/r/hawerroth)
 - 📚 **Curso Full Cycle:** [Curso Docker](https://fullcycle.com.br)
-- 👨‍💻 **Perfil GitHub:** [@gabriel-hawerroth](https://github.com/gabriel-hawerroth)
+
+## 🤝 Contribuições
+
+Este é um projeto educacional, mas sugestões e melhorias são sempre bem-vindas!
+
+## 📄 Licença
+
+Este projeto é parte do curso Full Cycle e é usado para fins educacionais.
 
 ---
 
