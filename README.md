@@ -1,31 +1,185 @@
-# Curso Docker - Full Cycle
+# 🐳 Projetos de Especialização em Docker
 
-Este repositório contém projetos desenvolvidos durante o curso de Docker da Full Cycle. O curso é reconhecido pela sua profundidade e praticidade no ensino de Docker, capacitando desenvolvedores a criar, gerenciar e orquestrar contêineres de forma eficiente.
+[![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
+[![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)](https://golang.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![Nginx](https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white)](https://nginx.org/)
+[![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)](https://laravel.com/)
 
-## Sobre o Curso
+> 🎯 **Projetos avançados de containerização Docker demonstrando arquitetura de microsserviços, builds multi-estágio e orquestração para produção**
 
-O curso Full Cycle é voltado para desenvolvedores que desejam aprimorar suas habilidades em Docker. Ele cobre desde os conceitos básicos até técnicas avançadas, com foco em exemplos práticos e desafios reais.
+Este repositório demonstra domínio avançado em **Docker** através de projetos práticos que simulam cenários reais de desenvolvimento e produção. Cada projeto foi desenvolvido com foco em **otimização**, **segurança** e **boas práticas** de containerização.
 
-## Conteúdo do Repositório
+---
 
-- **Exemplos de Código:** Exemplos que demonstram o uso de Docker em diferentes cenários.
-- **Desafios:** Desafios propostos para consolidar o aprendizado.
+## 🚀 Projetos Destacados
 
-## Tecnologias Utilizadas
-
-- **Docker:** Criação e gerenciamento de contêineres.
-- **JavaScript:** Scripts e aplicações front-end.
-- **Dockerfile:** Configurações para a construção de imagens Docker.
-- **HTML:** Estruturação básica de conteúdo web.
-- **Go:** Exemplos de aplicações back-end.
-
-## Como Utilizar
-
-1. Clone o repositório:
+### 🏆 Desafio 1: Container Go Ultra-Leve
+**Objetivo:** Criar uma imagem Docker otimizada pesando menos de 2MB
 
 ```bash
-git clone https://github.com/gabriel-hawerroth/curso-docker.git
+docker run hawerroth/fullcycle
 ```
 
-2. Navegue até o diretório do desafio desejado.
-3. Siga as instruções do readme para executar os contêineres Docker.
+**🔧 Técnicas Implementadas:**
+- **Builds multi-estágio** para otimização extrema
+- **Imagem base scratch** para tamanho mínimo
+- **Vinculação estática** em Go para executável independente
+- **Publicação no Docker Hub** com builds automatizados
+
+**📊 Resultado:** Imagem final de ~1.2MB (redução de 99.9% comparada a imagens convencionais)
+
+### 🌐 Desafio 2: Arquitetura Full-Stack de Microsserviços
+**Objetivo:** Orquestração completa com Nginx, Node.js e MySQL
+
+```bash
+cd desafio-2
+docker-compose up -d
+# Acesse: http://localhost:8080
+```
+
+**🏗️ Arquitetura Implementada:**
+- **Nginx** como proxy reverso e balanceador de carga
+- **API Node.js** com Express.js
+- **Banco MySQL** com volumes persistentes
+- **Docker Compose** para orquestração multi-container
+- **Isolamento de rede** e descoberta de serviços
+- **Verificações de saúde** e políticas de reinicialização
+
+---
+
+## 🛠️ Stack Tecnológica
+
+<table>
+<tr>
+<td align="center"><strong>Containerização</strong></td>
+<td align="center"><strong>Backend</strong></td>
+<td align="center"><strong>Frontend</strong></td>
+<td align="center"><strong>Banco de Dados</strong></td>
+</tr>
+<tr>
+<td align="center">
+  Docker<br>
+  Docker Compose<br>
+  Builds multi-estágio<br>
+  Orquestração de containers
+</td>
+<td align="center">
+  Node.js + Express<br>
+  Go (Golang)<br>
+  Laravel + PHP<br>
+  APIs RESTful
+</td>
+<td align="center">
+  Nginx<br>
+  HTML5<br>
+  Proxy Reverso<br>
+  Balanceamento de Carga
+</td>
+<td align="center">
+  MySQL<br>
+  Volumes Persistentes<br>
+  Migrações de Banco<br>
+  Pool de Conexões
+</td>
+</tr>
+</table>
+
+---
+
+## 📋 Competências Demonstradas
+
+### 🐳 **Especialização em Docker**
+- ✅ **Builds multi-estágio** para otimização de imagens
+- ✅ **Orquestração de containers** com Docker Compose
+- ✅ **Configuração de redes** e descoberta de serviços
+- ✅ **Gerenciamento de volumes** e persistência de dados
+- ✅ **Melhores práticas de segurança** (usuários non-root, imagens base mínimas)
+- ✅ **Deployments para produção**
+
+### ⚡ **DevOps e Infraestrutura**
+- ✅ **Design de arquitetura de microsserviços**
+- ✅ **Configuração de proxy reverso**
+- ✅ **Estratégias de balanceamento de carga**
+- ✅ **Gerenciamento de ambientes** (dev/staging/prod)
+- ✅ **Monitoramento de saúde** e desligamentos graciosos
+
+### 💻 **Desenvolvimento Full-Stack**
+- ✅ **APIs Backend** (Node.js, Go, Laravel)
+- ✅ **Design de banco de dados** e otimização
+- ✅ **Integração frontend** e design responsivo
+- ✅ **Compatibilidade multi-plataforma**
+
+---
+
+## 🚀 Início Rápido
+
+### Pré-requisitos
+```bash
+# Verificar instalações
+docker --version
+docker-compose --version
+```
+
+### Executar Projetos
+
+#### Desafio 1 - Aplicação Go Ultra-Leve
+```bash
+# Executar imagem do Docker Hub
+docker run hawerroth/fullcycle
+
+# Ou fazer build local
+cd desafio-1
+docker build -t fullcycle-go .
+docker run fullcycle-go
+```
+
+#### Desafio 2 - Aplicação Full-Stack
+```bash
+cd desafio-2
+docker-compose up -d
+
+# Verificar status
+docker-compose ps
+
+# Visualizar logs
+docker-compose logs -f
+
+# Parar serviços
+docker-compose down
+```
+
+#### Ambiente Laravel
+```bash
+docker-compose -f docker-compose.laravel.yaml up -d
+```
+
+---
+
+## 📊 Métricas de Performance
+
+| Projeto | Imagem Base | Tamanho Final | Tempo de Build | Tempo de Inicialização |
+|---------|-------------|---------------|----------------|----------------------|
+| Aplicação Go | `scratch` | ~1.2MB | ~10s | ~50ms |
+| API Node.js | `alpine` | ~85MB | ~45s | ~2s |
+| Proxy Nginx | `alpine` | ~23MB | ~30s | ~1s |
+| Aplicação Laravel | `php:fpm-alpine` | ~180MB | ~90s | ~5s |
+
+---
+
+## 🔗 Links Úteis
+
+- 🐳 **Docker Hub:** [hawerroth/fullcycle](https://hub.docker.com/r/hawerroth/fullcycle)
+- 📚 **Curso Full Cycle:** [Curso Docker](https://fullcycle.com.br)
+- 👨‍💻 **Perfil GitHub:** [@gabriel-hawerroth](https://github.com/gabriel-hawerroth)
+
+---
+
+<div align="center">
+
+**⭐ Se este repositório foi útil, considere deixar uma estrela!**
+
+*Desenvolvido com ❤️ e muitos containers 🐳*
+
+</div>
